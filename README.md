@@ -9,6 +9,11 @@ Installation:
   pip install -r requirements.txt
 
 Usage:
-- uvicorn main:app --reload
+- run these commands
+  python
+  import services
+  services._create_database()
+  quit()
+  uvicorn main:app --reload
 
 
