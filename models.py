@@ -14,8 +14,9 @@ class User(_database.Base):
     def verify_password(self, password: str):
         return _hash.bcrypt.verify(password, self.hashed_password)
 
-class TrackedCoin(_database.Base):
-    __tablename__ = "tracked_coins"
-    id = _sql.Column(_sql.Integer, primary_key=True,index=True )
-    name = _sql.Column(_sql.String, index=True)
-    price = _sql.Column(_sql.Float)
+class Coins(_database.Base):
+    __tablename__ = "coins"
+    id = _sql.Column(_sql.Integer, primary_key=True)
+    name = _sql.Column(_sql.String)
+    symbol = _sql.Column(_sql.String)
+    priceIdr = _sql.Column(_sql.Float)

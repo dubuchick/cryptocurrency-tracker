@@ -18,14 +18,14 @@ class User(_UserBase):
 
 class _TrackerCoinBase(_pydantic.BaseModel):
     name : str
-    price : float
 
 class TrackerCoinDelete(_TrackerCoinBase):
     name : str
 
 class TrackerCoinCreate(_TrackerCoinBase):
     name : str
-    price : float
+    priceIdr : float
+    symbol : str
     
     class Config:
         from_attributes = True
@@ -33,5 +33,14 @@ class TrackerCoinCreate(_TrackerCoinBase):
 class TrackerCoin(_TrackerCoinBase):
     id: int
     
+    class Config:
+        from_attributes = True
+
+class Coins(_pydantic.BaseModel):
+    id: int
+    name: str
+    symbol: str
+    priceIdr: float
+
     class Config:
         from_attributes = True
