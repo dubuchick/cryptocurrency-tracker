@@ -16,4 +16,8 @@ Usage:
   quit()
   uvicorn main:app --reload
 
+Steps:
+1. Create a User first using the "/users" endpoint
+2. Import the data by running the "/insert/data" endpoint
+3. Use the rest of endpoints as listed on the code.
 
